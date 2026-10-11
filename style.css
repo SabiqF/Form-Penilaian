@@ -1,0 +1,341 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --bg: #f3f6fc;
+  --panel: #ffffff;
+  --panel-light: #edf2fb;
+  --text: #17233b;
+  --muted: #66758c;
+  --blue: #3977f6;
+  --cyan: #0891b2;
+  --green: #24852a;
+  --red: #dc3545;
+  --border: #dce4f0;
+}
+
+/* Pengaturan dasar */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 34px 18px;
+  color: var(--text);
+  background: var(--bg);
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* Area utama aplikasi */
+.app {
+  width: min(100%, 760px);
+  margin: 0 auto;
+}
+
+/* Header dan judul */
+.hero {
+  text-align: center;
+  margin: 8px 0 28px;
+}
+
+/* Logo berupa foto */
+.logo {
+  display: grid;
+  place-items: center;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #ffffff;
+  border: 2px solid var(--border);
+  box-shadow: 0 8px 24px rgba(23, 35, 59, 0.1);
+}
+
+.logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.eyebrow {
+  color: var(--cyan);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+h1 {
+  margin: 8px 0;
+  font-size: clamp(29px, 6vw, 42px);
+  letter-spacing: -1.5px;
+  color: var(--text);
+}
+
+.subtitle,
+.hint {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.subtitle {
+  margin: 0;
+}
+
+/* Panel utama */
+.panel {
+  padding: clamp(20px, 4vw, 30px);
+  margin: 18px 0;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: var(--panel);
+  box-shadow: 0 12px 35px rgba(23, 35, 59, 0.06);
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  color: var(--text);
+}
+
+.hint {
+  margin: 0 0 22px;
+  font-size: 13px;
+}
+
+/* Input nilai */
+.field {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+label span {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+input {
+  width: 100%;
+  padding: 14px 15px;
+  color: var(--text);
+  font: inherit;
+  border: 1px solid #cbd6e6;
+  border-radius: 12px;
+  outline: none;
+  background: #ffffff;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+input::placeholder {
+  color: #9aa8bb;
+}
+
+input:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(57, 119, 246, 0.14);
+}
+
+/* Tombol hitung */
+button {
+  width: 100%;
+  padding: 14px 18px;
+  border: 0;
+  border-radius: 12px;
+  color: #ffffff;
+  background: var(--blue);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.15s,
+    background 0.15s;
+}
+
+button:hover {
+  background: #2866e4;
+}
+
+button:active {
+  transform: scale(0.99);
+}
+
+/* Pesan validasi */
+.message {
+  margin-top: 14px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.message.error {
+  color: var(--red);
+}
+
+.message.success {
+  color: var(--green);
+}
+
+/* Hasil penilaian */
+.result {
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+
+.score-number {
+  margin: 10px 0 18px;
+  color: var(--green);
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.score-number small {
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+/* Predikat dan status */
+.result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.result-item {
+  padding: 15px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: var(--panel-light);
+}
+
+.result-item span {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.result-item strong {
+  font-size: 20px;
+  color: var(--text);
+}
+
+.explanation {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Daftar referensi predikat */
+.scale {
+  padding-top: 22px;
+}
+
+.scale-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.scale-list li {
+  padding: 12px 6px;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--panel-light);
+}
+
+.scale-list strong {
+  display: block;
+  color: var(--blue);
+  font-size: 20px;
+}
+
+.scale-list span {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* Footer */
+footer {
+  padding: 12px 4px;
+  color: var(--muted);
+  font-size: 11px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Menyembunyikan hasil sebelum perhitungan */
+[hidden] {
+  display: none !important;
+}
+
+/* Tampilan untuk perangkat seluler */
+@media (max-width: 480px) {
+  body {
+    padding: 22px 12px;
+  }
+
+  .hero {
+    margin-bottom: 22px;
+  }
+
+  .logo {
+    width: 72px;
+    height: 72px;
+  }
+
+  .scale-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .result-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Informasi mahasiswa pada hasil penilaian */
+.student-info {
+  margin: 16px 0;
+  padding: 14px 16px;
+  background: var(--panel-light);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.student-info p {
+  margin: 6px 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.student-info strong {
+  color: var(--text);
+  font-weight: 700;
+}

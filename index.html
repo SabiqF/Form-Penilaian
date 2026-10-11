@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplikasi Penilaian Mahasiswa</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div class="logo">
+        <img src="logo upb.png" alt="Logo Aplikasi Penilaian"
+             onerror="this.parentElement.hidden = true">
+      </div>
+      <p class="eyebrow">APLIKASI AKADEMIK</p>
+      <h1>Penilaian Mahasiswa</h1>
+      <p class="subtitle">Hitung nilai akhir dan ketahui predikat secara cepat.</p>
+    </header>
+
+    <section class="panel" aria-labelledby="form-title">
+      <h2 id="form-title">Masukkan Nilai</h2>
+      <p class="hint">Isi nama, mata kuliah, dan kedua nilai (angka 0 sampai 100).</p>
+      <form id="gradeForm" novalidate>
+        <div class="field">
+          <label for="studentName">Nama Mahasiswa</label>
+          <input
+            id="studentName"
+            name="studentName"
+            type="text"
+            placeholder="Masukkan nama mahasiswa"
+          >
+        </div>
+
+        <div class="field">
+          <label for="courseName">Mata Kuliah</label>
+          <input
+            id="courseName"
+            name="courseName"
+            type="text"
+            placeholder="Masukkan nama mata kuliah"
+          >
+        </div>
+
+        <div class="field">
+          <label for="assignmentScore">Nilai Tugas <span>(40%)</span></label>
+          <input id="assignmentScore" name="assignmentScore" type="number"
+                 min="0" max="100" step="any" placeholder="Contoh: 90" inputmode="decimal">
+        </div>
+        <div class="field">
+          <label for="examScore">Nilai Ujian <span>(60%)</span></label>
+          <input id="examScore" name="examScore" type="number"
+                 min="0" max="100" step="any" placeholder="Contoh: 80" inputmode="decimal">
+        </div>
+        <button type="submit">Hitung Nilai</button>
+      </form>
+
+      <div id="message" class="message" role="alert" aria-live="polite"></div>
+
+      <section id="result" class="result" aria-labelledby="result-title" hidden>
+        <h2 id="result-title">Hasil Penilaian</h2>
+        <div class="student-info">
+          <p>Nama Mahasiswa: <strong id="resultName">-</strong></p>
+          <p>Mata Kuliah: <strong id="resultCourse">-</strong></p>
+        </div>
+        <div class="score-number"><span id="finalScore">0</span><small>/ 100</small></div>
+        <div class="result-grid">
+          <div class="result-item"><span>Predikat</span><strong id="grade">-</strong></div>
+          <div class="result-item"><span>Status</span><strong id="status">-</strong></div>
+        </div>
+        <p id="explanation" class="explanation"></p>
+      </section>
+    </section>
+
+    <section class="scale panel">
+      <h2>Referensi Predikat</h2>
+      <ul id="gradeScale" class="scale-list"></ul>
+    </section>
+
+  </main>
+</body>
+</html>
