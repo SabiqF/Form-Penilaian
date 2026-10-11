@@ -1,4 +1,5 @@
 # Aplikasi Penilaian Mahasiswa
+https://sabiqf.github.io/Form-Penilaian/
 
 Aplikasi web sederhana untuk menghitung nilai akhir mahasiswa dari dua input:
 - Nilai Tugas (bobot 40%)
