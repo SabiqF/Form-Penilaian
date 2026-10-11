@@ -28,7 +28,6 @@ Status **Lulus** jika nilai akhir >= 65; selain itu **Belum lulus**.
 ## Kesesuaian dengan persyaratan tugas
 - 2 input: nilai tugas dan nilai ujian.
 - 1 tombol: Hitung Nilai.
-- Validasi input numerik dan rentang 0–100. `TryParse` merupakan metode C#; dalam JavaScript validasi dilakukan dengan `Number()` dan `Number.isFinite()`.
 - Percabangan: `if / else if / else` untuk predikat dan `if / else` untuk status.
 - Perulangan: `for` membuat daftar referensi predikat dari array.
 - Output jelas: nilai akhir, predikat, status, dan pesan validasi.
@@ -37,4 +36,3 @@ Status **Lulus** jika nilai akhir >= 65; selain itu **Belum lulus**.
 - `index.html`: struktur dan dua input, satu tombol, area output.
 - `style.css`: tampilan responsif.
 - `script.js`: validasi, rumus, percabangan, perulangan.
-- `Laporan_Singkat.docx`: laporan singkat dan panduan pengujian.
